@@ -1,0 +1,48 @@
+@green: #9bbf9f;
+@gray: #afafaf;
+@dark-green: #78897a;
+@light-green: #ecffec;
+
+.header {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: @green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px 0;
+    margin: 0 15px;
+
+    div {
+        button {
+            height: 100%;
+            margin-left: 5px; 
+        }
+    }
+
+    button {
+        font-size: 100%;
+        font-family: inherit;
+        background-color: @dark-green;
+        border-radius: 10px;
+        border-width: 0;
+    }
+    button:hover {
+        background-color: @light-green;
+    }
+}
+.container {
+    position: relative;
+    margin: 15px;
+    .array {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        .array-element {
+            background-color: @gray;
+        }
+    }
+}
+

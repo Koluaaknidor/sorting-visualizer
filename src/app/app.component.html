@@ -1,0 +1,25 @@
+<div class="header">
+  <div>
+    <button (click)="arrayService.bubleSort()" [disabled]="arrayService.sortingInProgress">Bubble Sort</button>
+    <button (click)="arrayService.mergeSort()" [disabled]="arrayService.sortingInProgress">Merge Sort</button>
+  </div>
+  <button (click)="arrayService.generateRandomArray()" [disabled]="arrayService.sortingInProgress">Regenerate Array</button>
+  <div>
+    <div style="text-align: center">Sorting Speed</div>
+    <input type="range" #speedSlider (input)="arrayService.sortingSpeed = Number(speedSlider.value)" [value]="arrayService.sortingSpeed">
+  </div>
+  <div>
+    <div style="text-align: center">Array Size</div>
+    <input type="range" #sizeSlider [disabled]="arrayService.sortingInProgress" 
+      (input)="arrayService.arraySize = Number(sizeSlider.value); arrayService.generateRandomArray()" [value]="arrayService.arraySize">
+  </div>
+</div>
+<div class="container" #container>
+  <div class="array">
+    <div class="array-element" *ngFor="let elem of arrayService.array" [ngStyle]="{height: elem*4 + 'px', 
+                                                                                   width: container.clientWidth / arrayService.array.length - 2 + 'px',
+                                                                                   marginLeft: '1px',
+                                                                                   marginRight: '1px'}"></div>
+                                                                                   <!-- ngStyle not recalculating width when window width changes -->
+  </div>
+</div>
