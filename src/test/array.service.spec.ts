@@ -13,8 +13,4 @@ describe('ArrayServiceService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  it('Should', () => {
-    expect(service).toBeTruthy();
-  });
 });
